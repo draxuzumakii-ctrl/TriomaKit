@@ -18,7 +18,7 @@ export default function Register() {
       const { user } = await createUserWithEmailAndPassword(auth, email, pass);
       await setDoc(doc(db, 'profiles', user.uid), { fullName: name, role: 'user', createdAt: serverTimestamp() });
       push('Akun berhasil dibuat', 'success'); router.push('/dashboard');
-    } catch (err: any) { push(err.message, 'error'); }
+    } catch (err: unknown) { push(err instanceof Error ? err.message : 'Terjadi kesalahan', 'error'); }
     finally { setLoading(false); }
   };
   return (

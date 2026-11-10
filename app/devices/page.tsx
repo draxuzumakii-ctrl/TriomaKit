@@ -1,5 +1,4 @@
 'use client';
-import { useAuth } from '@/lib/firebase/auth-context';
 import { Nav } from '@/components/marketing/Nav';
 import { Protected } from '@/components/ui/Protected';
 

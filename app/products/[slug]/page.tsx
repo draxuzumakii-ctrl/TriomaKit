@@ -36,7 +36,7 @@ export default function ProductDetail() {
       });
       push('Pesanan berhasil dibuat', 'success');
       router.push('/orders');
-    } catch (err: any) { push(err.message, 'error'); }
+    } catch (err: unknown) { push(err instanceof Error ? err.message : 'Terjadi kesalahan', 'error'); }
     finally { setLoading(false); }
   };
 

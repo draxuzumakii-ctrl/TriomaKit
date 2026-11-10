@@ -3,7 +3,7 @@ import { useAuth } from '@/lib/firebase/auth-context';
 import { Nav } from '@/components/marketing/Nav';
 import { Protected } from '@/components/ui/Protected';
 import Link from 'next/link';
-import { Home, Shield, Zap, Leaf, ShoppingBag } from 'lucide-react';
+import { Home, Shield, Zap, Leaf } from 'lucide-react';
 
 function Inner() {
   const { profile } = useAuth();

@@ -28,7 +28,7 @@ function Inner() {
       push('Produk ditambahkan', 'success');
       setForm({ slug: '', name: '', description: '', price: 0, hpp: 0, stock: 0, focus: 'Otomatisasi' });
       reload();
-    } catch (err: any) { push(err.message, 'error'); }
+    } catch (err: unknown) { push(err instanceof Error ? err.message : 'Terjadi kesalahan', 'error'); }
   };
 
   return (

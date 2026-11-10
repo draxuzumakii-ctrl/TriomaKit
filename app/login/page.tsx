@@ -13,7 +13,7 @@ export default function Login() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try { setLoading(true); await signInWithEmailAndPassword(auth, email, pass); push('Login berhasil', 'success'); router.push('/dashboard'); }
-    catch (err: any) { push(err.message, 'error'); }
+    catch (err: unknown) { push(err instanceof Error ? err.message : 'Terjadi kesalahan', 'error'); }
     finally { setLoading(false); }
   };
   return (
